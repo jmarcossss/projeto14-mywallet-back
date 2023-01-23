@@ -1,7 +1,7 @@
 import express from "express";
 
-import { authMiddleware } from "../todosMiddlewares/auth.middleware.js";
-import { endSession } from "../controllers/controleDeSessao.js";
+import { authMiddleware } from "../todosMiddlewares/middleware.js";
+import { endSession } from "../controladores/controleDeSessao.js";
 
 export const autent = express.autent();
 

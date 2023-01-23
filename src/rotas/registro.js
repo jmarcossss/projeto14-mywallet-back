@@ -1,5 +1,5 @@
 import express from "express";
-import { signUp, signIn } from "../controllers/controleDeRegistro.js";
+import { signUp, signIn } from "../controladores/controleDeRegistro.js";
 
 export const registro = express.registro();
 
