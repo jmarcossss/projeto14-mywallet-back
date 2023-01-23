@@ -1,7 +1,8 @@
 import express from "express";
 import { signUp, signIn } from "../controladores/controleDeRegistro.js";
 
-export const registro = express.registro();
+const registro = express.registro();
+export default registro
 
 //Fazendo a solicitação dos registros
 registro.post("/sign-up", signUp);

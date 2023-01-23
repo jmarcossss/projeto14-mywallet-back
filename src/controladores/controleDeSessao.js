@@ -1,17 +1,15 @@
-import chalk from "chalk";
+import { armazenaOperacoes } from "../todasAsDbs/infoDasDbs.js";
 
-import { sessionsCollection } from "../todasAsDbs/infoDasDbs.js";
-
-async function endSession(req, res) {
-    const { session } = res.locals;
-
+async function endSession(req, response) {
+    const { session } = response.locals;
     try {
-        await sessionsCollection.deleteOne({ userId: session.userId });
-        res.status(200).send("Até logo " + session.user);
-    } catch (err) {
-        console.log(chalk.bold.red(err));
-        res.status(500).send(err.message);
+        await armazenaOperacoes.deleteOne({ userId: session.userId });
+        response.status(200).send("Até logo " + session.user);
+    }
+    catch(err) {
+        console.log(err)
+        response.sendStatus(500)
     }
 }
 
-export { endSession };
+export { endSession }
